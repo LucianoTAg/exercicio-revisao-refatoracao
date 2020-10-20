@@ -5,11 +5,35 @@
 #include <string>
 
 class Empregado {
-	
-  public:
-    double salarioHora;  
-    double quotaMensalVendas;  
 
+  public:
+
+    void setNome(std::string n) {
+      nome = n;
+    }
+
+    std::string getNome() {
+      return nome;
+   }
+
+    double getSalarioHora() {
+
+      return salarioHora;
+
+    }
+    double getQuotaMensalVendas() {
+
+      return quotaMensalVendas;
+
+    }
+
+    void setSalarioHora(double s) {
+      salarioHora = s;
+    }
+
+    void setQuotaMensalVendas(double q) {
+      quotaMensalVendas = q;
+    }
 
     double pagamentoMes(double horasTrabalhadas) {
  
@@ -20,9 +44,13 @@ class Empregado {
         double x = horasTrabalhadas - 8;
         t += x / 2;
       }
-	  return t * salarioHora;
+	    return t * salarioHora;
     }
-	
+
+    private:
+      std::string nome;  
+      double salarioHora;  
+      double quotaMensalVendas;  
 };
 
 #endif
